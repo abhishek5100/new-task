@@ -28,4 +28,6 @@ const newsSlice = createSlice({
 });
 
 export const { removePost, setPage, toggleView } = newsSlice.actions;
+
+// here define store only for single slice other wise i will have to define in onther page 
 export const store = configureStore({ reducer: { news: newsSlice.reducer } });

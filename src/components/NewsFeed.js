@@ -14,7 +14,7 @@ const NewsFeed = () => {
   const [showFeedback, setShowFeedback] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => dispatch(fetchPosts()), 5000);
+    setTimeout(() => dispatch(fetchPosts()), 1000);
   }, [dispatch]);
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -23,10 +23,12 @@ const NewsFeed = () => {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
+
+
+
       <aside className="w-1/4 p-6 bg-white shadow-lg rounded-xl flex flex-col space-y-6 relative">
-        {/* User Info */}
         <div className="flex items-center space-x-4">
+
           <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
           <div>
             <h3 className="font-bold">Hi Reader,</h3>
@@ -34,22 +36,22 @@ const NewsFeed = () => {
           </div>
         </div>
 
-        {/* View Toggle */}
-        <div className="bg-gray-100 p-4 border border-red-500 flex flex-col items-center rounded-lg">
+        <div className="bg-gray-100 p-4 flex flex-col items-center rounded-lg">
           <h4 className="font-bold mb-2">View Toggle</h4>
-          <div className="flex space-x-2">
+          <div className="flex ">
             <button 
-              className={`px-4 py-2 rounded-lg ${viewMode === "list" ? "bg-green-400" : "bg-gray-300"}`}
+
+              className={`px-6 py-3  ${viewMode === "list" ? "bg-green-400" : "bg-gray-300"}`}
               onClick={() => dispatch(toggleView())}
             >📄</button>
             <button 
-              className={`px-4 py-2 rounded-lg ${viewMode === "grid" ? "bg-green-400" : "bg-gray-300"}`}
+              className={`px-6 py-3  ${viewMode === "grid" ? "bg-green-400" : "bg-gray-300"}`}
               onClick={() => dispatch(toggleView())}
             >📋</button>
           </div>
         </div>
 
-        {/* Feedback Button */}
+       
         <div className="bg-gray-100 p-4 rounded-lg relative">
           <h4 className="font-bold mb-2">Have a Feedback?</h4>
           <button 
@@ -58,7 +60,6 @@ const NewsFeed = () => {
           >We’re Listening!</button>
         </div>
 
-        {/* Sliding Feedback Form */}
         <div 
           className={`absolute top-0 left-0 w-full h-full bg-white shadow-lg p-6 rounded-xl transform transition-transform ${
             showFeedback ? "translate-x-0" : "-translate-x-full"
@@ -74,7 +75,6 @@ const NewsFeed = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-6">
         {loading ? (
           <p className="text-lg font-bold">Loading...</p>
