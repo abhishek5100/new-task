@@ -14,7 +14,7 @@ const newsSlice = createSlice({
     },
     setPage: (state, action) => {
       state.currentPage = action.payload;
-    },
+    },  
     toggleView: (state) => {
       state.viewMode = state.viewMode === "list" ? "grid" : "list";
     },

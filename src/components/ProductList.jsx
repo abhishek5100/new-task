@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-const PostList = ({ posts, viewMode, removePost, startIndex }) => {
+const ProductList = ({ posts, viewMode, removePost, startIndex }) => {
   const dispatch = useDispatch();
   return (
     <div className={viewMode === "grid" ? "grid grid-cols-3 gap-6" : "flex flex-col space-y-6"}>
@@ -16,4 +16,4 @@ const PostList = ({ posts, viewMode, removePost, startIndex }) => {
   );
 };
 
-export default PostList;
+export default ProductList;

@@ -11,7 +11,6 @@ const FeedbackForm = ({ closeForm }) => {
 
   const onSubmit = (data) => {
     alert("Feedback submitted successfully!");
-    console.log(data);
     reset(); 
     if (closeForm) closeForm();
   };
